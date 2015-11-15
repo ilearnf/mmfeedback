@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+        body{
+            display: table;
+            background: url(@Url.Content("~/App_LocalResources/cat2.gif"));
+            background-repeat: repeat;
+        }
+        html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        div#message{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+    window.setTimeout(function(){
+        window.location.href = "/Home/Index";
+    }, 5000);
+    </script>
+</head>
+<body>
+    <div id="message">
+	    <h1>Login error!</h1>
+	    <p>Вы будете перенаправлены через 5 секунд.</p>
+	</div>
+</body>
+</html>
+

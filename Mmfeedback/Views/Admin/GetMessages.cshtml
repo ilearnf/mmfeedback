@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Mmfeedback.Models.Entities.Message>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+    div.message{
+        border: 1px solid black;
+    }
+    </style>
+    <title>Сообщения</title>
+</head>
+<body>
+    <a href="@Url.Action("Index", "Admin")">Назад</a>
+    @foreach(var message in Model){
+        <div class="message">
+            <label>Тема</label>
+            <h2>@message.Title</h2>
+            <label>Сообщение</label>
+            <p>@message.Description</p>
+            <label>Отправитель</label>
+            <a href="@message.AuthorId">@message.AuthorId</a>
+        </div>
+    }
+</body>
+</html>
+

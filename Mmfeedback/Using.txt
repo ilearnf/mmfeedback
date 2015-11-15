@@ -1,0 +1,2 @@
+﻿Search by tags:
+    Insert tags divided by comma, insert review type starting with '@'.

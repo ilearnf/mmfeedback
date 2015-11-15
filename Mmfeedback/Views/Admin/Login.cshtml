@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Вход администратора</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.11.3.min.js")"></script>
+    <script type='text/javascript'>
+    var logged = false;
+    $(document).ready(function(){
+	    $("#login").on("click", function(){
+	        window.open("/Admin/VkLogin", "login", "width=800, heght=600, location=0", true);
+	        logged = true;
+	        return false;
+	    });
+	});
+	</script>
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Admin", null, FormMethod.Post, new { @id = "form" })){
+        <button type="button" id="login">Login</button>
+        <input type="password" name="password" placeholder="Пароль администратора" />
+        <button type="submit">submit</button>
+    }
+</body>
+</html>
+

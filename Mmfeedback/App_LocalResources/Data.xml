@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<reviews>
+  <review>
+    <id>1</id>
+    <postid>20</postid>
+    <title>Jedi review</title>
+    <date>15.11.2015</date>
+    <description>I am Obi-Wan Kenobi and I am reviewing algo course by Shur A. M.</description>
+    <tags>jedi</tags>
+    <category></category>
+    <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_20</communityurl>
+    <communutydiscussionscount>0</communutydiscussionscount>
+    <author></author>
+    <authorid></authorid>
+  </review>
+  <review>
+    <id>2</id>
+    <postid>22</postid>
+    <title>Dark Side Force review</title>
+    <date>15.11.2015</date>
+    <description>I am Darth Vader and I am reviewing calculus course by Shamgunov N. K.</description>
+    <tags>calculus,shamgunov</tags>
+    <category></category>
+    <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_22</communityurl>
+    <communutydiscussionscount>0</communutydiscussionscount>
+    <author>Моисей Фомин</author>
+    <authorid>330861314</authorid>
+  </review>
+</reviews>

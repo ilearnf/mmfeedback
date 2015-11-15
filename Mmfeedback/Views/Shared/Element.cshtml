@@ -1,0 +1,19 @@
+﻿@model Mmfeedback.Models.Entities.Review
+
+<div class="review">
+    <div class="review-meta inline">
+        <div class="date">
+            <p>@Model.Date</p>
+        </div>
+        <div class="discussion-counter">
+            <a href="@Model.CommunityUrl" class="community-link"><i class="material-icons w3-xxlarge">person</i>@Model.CommunutyDiscussionsCount</a>
+        </div>
+        <div class="meta-tags">
+            <p>@String.Join(", ", Model.Tags)</p>
+        </div>
+    </div>
+    <div class="review-content inline">
+	    <h2>@Model.Title</h2>
+	    <p>@Model.Description</p>
+	</div>
+</div>

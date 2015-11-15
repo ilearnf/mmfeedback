@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<messages>
+  <message>
+    <title>dd</title>
+    <description>ddd</description>
+    <author></author>
+    <authorid></authorid>
+  </message>
+  <message>
+    <title>Issue 2</title>
+    <description>I have an issue.</description>
+    <author></author>
+    <authorid>vk.com/330861314</authorid>
+  </message>
+  <message>
+    <title>Issue 3</title>
+    <description>This is the test message.</description>
+    <author></author>
+    <authorid>vk.com/330861314</authorid>
+  </message>
+  <message>
+    <title>Test</title>
+    <description>test</description>
+    <author></author>
+    <authorid>anonym</authorid>
+  </message>
+</messages>

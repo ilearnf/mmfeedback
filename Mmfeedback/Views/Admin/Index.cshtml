@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Mmfeedback.Models.Entities.PendingReview>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="@Url.Content("~/Scripts/jquery-1.11.3.min.js")"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <title>Index</title>
+    <script>
+    $(document).ready(function(){
+        $(".confirm").on("click", function(){
+            var parent = $(this).parent();
+            parent.hide();
+            var description = parent.find(".description").text();
+            var title = parent.find(".title").text();
+            var tags = parent.find(".tags").text();
+            var author = parent.find(".author").text();
+            var authorId = parent.find(".author-id").text();
+            var id = parent.find(".id").text();
+            $.ajax({
+                url: '@Url.Action("PostReview", "Admin")',
+                type: "POST",
+                data: { 
+	                description: description,
+	                title: title,
+	                author: author,
+	                authorId: authorId,
+	                id: id,
+	                tags: tags
+                },
+                success: function(result){
+                    alert(result);
+                }
+            });
+        });
+        $(".decline").on("click", function(){
+            $(this).parent().hide();
+            $.ajax({
+                url: '@Url.Action("DeclineReview", "Admin")',
+                type: "POST",
+                data: { 
+                    id: $(this).parent().find(".id").text(),
+                },
+                success: function(result){
+                    alert(result);
+                }
+            });
+        });
+    });
+    </script>
+    <style>
+        .id{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="@Url.Action("Index", "Home")">Выход</a>
+        <button class="btn btn-primary btn-block" onclick="location.href='@Url.Action("GetMessages", "Admin")'">Сообщения</button>
+        <h2>Новые отзывы</h2>
+	    <div id="pendingReviews">
+	        @foreach(var review in Model){
+	            <div class="review">
+	                <label>Название</label>
+	                <p class="title">@review.Title</p>
+	                <label>Текст</label>
+		            <p class="description">@review.Description</p>
+		            <label>Теги</label>
+		            <p class="tags">@String.Join(",", review.Tags)</p>
+		            <label>Автор</label>
+		            <p class="author">@review.Author</p>
+		            <p class="author-id">@review.AuthorId</p>
+		            <p class="id" style="display: none">@review.Id</p>
+		            <button type="button" class="confirm btn btn-primary">confirm</button>
+		            <button type="button" class="decline btn btn-warning">decline</button>
+		        </div>
+		        <hr>
+		    }
+	    </div>
+	</div>
+</body>
+</html>
+

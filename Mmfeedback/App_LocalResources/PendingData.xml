@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<reviews>
+  <review>
+    <id>1</id>
+    <title>Droid review</title>
+    <description>I am R2-D2 and I am reviewing the tuting methods of Shur A. M.</description>
+    <tags>shur</tags>
+    <category>На преподавателя</category>
+    <author>Моисей Фомин</author>
+    <authorid>330861314</authorid>
+  </review>
+</reviews>

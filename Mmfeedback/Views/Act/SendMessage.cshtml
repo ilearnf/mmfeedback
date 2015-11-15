@@ -1,0 +1,34 @@
+﻿@model Mmfeedback.Models.ViewModels.SendMessageForm
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Отправить сообщение @@ Mmfeedback</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.11.3.min.js")"></script>
+    <script>
+    $(document).ready(function(){
+	    $("#sign").on("click", function(){
+	        window.open("/Act/VkLogin", "login", "width=800, heght=600, location=0", true);
+	        return false;
+	    });
+	});
+	</script>
+</head>
+<body>
+    <a href="@Url.Action("Index", "Home")">На главную</a>
+    @using (Html.BeginForm("SendMessage", "Act", null, FormMethod.Post, new { @id = "form" })){
+	    <input type="text" placeholder="Тема" name="title"/>
+	    <br>
+	    <textarea cols="55" rows="20" placeholder="Сообщение" name="description"></textarea>
+	    <br>
+	    <button type="button" id="sign">Подписать</button>
+	    <button type="submit">Отправить</button>
+	}
+</body>
+</html>
+

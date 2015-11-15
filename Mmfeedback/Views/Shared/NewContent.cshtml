@@ -1,0 +1,5 @@
+﻿@model IEnumerable<Mmfeedback.Models.Entities.Review>
+
+@foreach(var review in Model){
+    Html.RenderPartial("Element", review);
+}

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C274EB16-160F-4A88-BBD1-1065BE794099}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mmfeedback</RootNamespace>
+    <AssemblyName>Mmfeedback</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Nemiro.OAuth">
+      <HintPath>..\packages\Nemiro.OAuth.1.10\lib\net45\Nemiro.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data">
+      <HintPath>..\packages\dotConnect.Express.for.MySQL.8.4.521\lib\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql">
+      <HintPath>..\packages\dotConnect.Express.for.MySQL.8.4.521\lib\Devart.Data.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="kasthack.vksharp">
+      <HintPath>..\packages\kasthack.vksharp.0.7.0.43039\lib\net45\kasthack.vksharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Models\Abstract\" />
+    <Folder Include="Models\Entities\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Models\Concrete\" />
+    <Folder Include="Views\Act\" />
+    <Folder Include="App_LocalResources\" />
+    <Folder Include="Models\VIewModels\" />
+    <Folder Include="Models\VIewModels\Forms\" />
+    <Folder Include="Views\Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Abstract\IReviewRepository.cs" />
+    <Compile Include="Models\Entities\Review.cs" />
+    <Compile Include="Models\Entities\ReviewTags.cs" />
+    <Compile Include="Models\Entities\ReviewCategory.cs" />
+    <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Models\Concrete\ReviewsContext.cs" />
+    <Compile Include="Infrastructure\ReviewsContextInitializer.cs" />
+    <Compile Include="Models\Concrete\DbProductRepository.cs" />
+    <Compile Include="Models\VIewModels\ReviewCreatorModel.cs" />
+    <Compile Include="Models\VIewModels\Forms\AddReviewForm.cs" />
+    <Compile Include="Controllers\ActController.cs" />
+    <Compile Include="Models\Entities\PendingReview.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Models\Concrete\XmlReviewRepository.cs" />
+    <Compile Include="Models\Concrete\XmlPendingReviewRepository.cs" />
+    <Compile Include="Models\Abstract\IPendingRepository.cs" />
+    <Compile Include="Models\Concrete\MessageRepository.cs" />
+    <Compile Include="Models\Entities\Message.cs" />
+    <Compile Include="Models\Abstract\IMessageRepository.cs" />
+    <Compile Include="Models\VIewModels\Forms\SendMessageForm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Shared\Element.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Act\AddPage.cshtml" />
+    <Content Include="App_LocalResources\loader.gif" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Views\Shared\NewContent.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Act\AddForm.cshtml" />
+    <Content Include="Scripts\HomeScript.js" />
+    <Content Include="Views\Act\SendMessage.cshtml" />
+    <Content Include="Views\Admin\GetMessages.cshtml" />
+    <Content Include="Views\Act\Success.cshtml" />
+    <Content Include="App_LocalResources\cat.gif" />
+    <Content Include="Views\Admin\ThrowError.cshtml" />
+    <Content Include="App_LocalResources\cat2.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="Using.txt" />
+    <None Include="App_LocalResources\Data.xml" />
+    <None Include="App_LocalResources\PendingData.xml" />
+    <None Include="App_LocalResources\Messages.xml" />
+  </ItemGroup>
+</Project>

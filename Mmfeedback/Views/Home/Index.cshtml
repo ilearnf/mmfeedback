@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Mmfeedback.Models.Entities.Review>
+
+@{
+	ViewBag.Title = "Mmfeedback main";
+}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Bad+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Kelly+Slab&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <style>
+            body{
+                /*background: linear-gradient(90deg, #ffa17f 60%, #00223e 90%);*/
+                background: linear-gradient(90deg, #8e9eab 10%, #eef2f3 20%);
+            }
+            .jumbotron{
+                background-color: white !important;
+            }
+            .review{
+                display: table-row;
+                width: 100%;
+                border-style: none none dotted solid;
+                border-color: #878787;
+            }
+            .date{
+                font-weight: bold;
+                font-size: 180%;
+            }
+            .meta-tags{
+                color: #3e8cc3
+                font-size: 20;
+                font-weight: bold;
+            }
+            .review-content>p{
+                font-family: "Bad Script", cursive;
+                font-size: 130%;
+            }
+            div.review-content{
+            display: table-cell;
+            }
+            .discussion-counter{
+                color: #878787;
+            }
+            .review-content>h2{
+                font-family: "Comfortaa", cursive;
+                color: #6b6d6f;
+                font-weight: 8000;
+                font-size: 250%;
+            }
+            #search{
+                height: 3em;
+                width: 100%;
+            }
+            div.inline{
+                display: inline-block;
+                margin: 10px
+            }
+            div.review-meta{
+                display: table-cell;
+                font-family: "Kelly Slab", cursive;
+                padding: 6px;
+                border-style: none solid none none;
+                border-color: #878787;
+                width: 25%;
+                text-align: right;
+                overflow-wrap: break-word;
+                vertical-align: top;
+            }
+            table#suggested {
+                width: 1%;
+            }
+            table#main {
+                width: 100%;
+            }
+            table#suggested td{
+                background: gray;
+                padding: 5px;
+                text-align: center;
+                border: 1px solid black;
+            }
+            table#tags {
+                width: 0%;
+            }
+            table#tags td{
+                background: orange;
+                padding: 5px;
+                text-align: center;
+                border: 1px solid black;
+            }
+            a.community-link:hover{
+                color: blue;
+            }
+            div.nav>a{
+                color: white;
+            }
+            div.nav{
+                text-align: right;
+            }
+        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <script src="@Url.Content("~/Scripts/jquery-1.11.3.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/Scripts/HomeScript.js")"></script>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="w3-container w3-blue-grey">
+	        <h1>MmFeedback</h1>
+	        <div class="w3-topnav w3-blue-grey w3-large nav">
+	            <a href='@Url.Action("Login", "Admin")'>Вход администратора</a>
+	            <a href='@Url.Action("SendMessage", "Act")'>Обратная связь</a>
+	            <a href="#">Правила</a>
+	            <a href="@Url.Action("AddReview", "Act")">Добавить отзыв</a>
+	        </div>
+	    </header>
+        <div class="container" id="container">
+            <div class ="jumbotron">
+                <h1>Предметы матмеха</h1>
+                <button class="btn btn-primary btn-block" onclick="location.href='@Url.Action("AddReview", "Act")'">Поделиться мнением</button>
+                <h3></h3>
+            </div>
+            <table id="main">
+                <tr>
+                    <td width="80%">
+			            <div id="searchDiv" class="form-group">
+			                <table id="suggested">
+			                    <tr id="suggestedTags">
+			                    </tr>
+			                </table>
+			                <input type="text" id="search"  name="search" placeholder="search" onkeypress="SaveTags(event)"/>
+			                <table id="tags">
+			                    <tr id="savedTags">
+			                    </tr>
+			                </table>
+			            </div>
+			            <div id="reviewsList" style="height: 100">
+				            @foreach(var review in Model){
+				                Html.RenderPartial("Element", review);
+				            }
+				        </div>
+				    </td>
+				</tr>
+			</table>
+	        <div id="loading"></div>
+	    </div>
+    </body>
+</html>
