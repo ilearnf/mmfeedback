@@ -1,21 +1,12 @@
 ﻿<Properties StartupItem="Mmfeedback/Mmfeedback.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mmfeedback/Views/Act/AddForm.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mmfeedback.Tests/Controllers/HomeControllerTest.cs">
     <Files>
-      <File FileName="Mmfeedback/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="Mmfeedback/Controllers/AdminController.cs" Line="79" Column="44" />
-      <File FileName="Mmfeedback/Views/Admin/Index.cshtml" Line="11" Column="5" />
-      <File FileName="Mmfeedback/Controllers/ActController.cs" Line="55" Column="1" />
-      <File FileName="Mmfeedback/Global.asax.cs" Line="68" Column="4" />
-      <File FileName="Mmfeedback/Views/Act/AddForm.cshtml" Line="150" Column="46" />
-      <File FileName="Mmfeedback/Views/Home/Index.cshtml" Line="27" Column="51" />
-      <File FileName="Mmfeedback/Views/Shared/Element.cshtml" Line="12" Column="16" />
+      <File FileName="Mmfeedback.Tests/Controllers/HomeControllerTest.cs" Line="122" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/fominses/Projects/Mmfeedback/Mmfeedback/Controllers/ActController.cs" line="39" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

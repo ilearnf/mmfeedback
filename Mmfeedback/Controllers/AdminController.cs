@@ -50,23 +50,27 @@ namespace Mmfeedback.Controllers
 
 		[HttpPost]
 		public ActionResult Login(string password){
-			var id = TempData.ContainsKey ("id") ? TempData ["id"] : "";
+			//var id = TempData.ContainsKey("id") ? (string)TempData ["id"] : "";
 			if (password != "111") {
-				TempData ["logged"] = false;
+				Session ["logged"] = false;
 				return Redirect (Url.Action ("ThrowError"));
 			}
-			TempData ["logged"] = true;
+			Session ["logged"] = true;
 			return Redirect (Url.Action ("Index"));
 		}
 
 		public ActionResult Logout(){
-			TempData ["logged"] = false;
+			Session.RemoveAll ();
+			Session.Clear ();
+			Session.Abandon ();
+			//Session ["logged"] = false;
 			return RedirectToAction ("Index", "Home");
 		}
 
         public ActionResult Index()
 		{
-			var logged = TempData.ContainsKey ("logged") ? (bool)TempData ["logged"] : false;
+			var a = (bool)Session ["logged"];
+			var logged = Session ["logged"] as bool? ?? false;
 			if (logged)
 				return View (pendingRepository.Reviews);
 			else
@@ -74,7 +78,7 @@ namespace Mmfeedback.Controllers
         }
 
 		public ActionResult GetMessages(){
-			var logged = TempData.ContainsKey ("logged") ? (bool)TempData ["logged"] : false;
+			bool logged = Session ["logged"] as bool? ?? false;
 			if (logged)
 				return View (messageRepository.Items.AsEnumerable());
 			else
@@ -115,7 +119,7 @@ namespace Mmfeedback.Controllers
 			return Content ("declined");
 		}
 
-		public ActionResult ThrowError(){
+		public ViewResult ThrowError(){
 			return View ();
 		}
     }

@@ -29,19 +29,11 @@ namespace Mmfeedback.Controllers
 
 		public ActionResult VkLogin(){
 			var callbackUrl = Url.Action ("VkLoginCallback", "Act", null, null, Request.Url.Host);
-			//var callbackUrl = "https://oauth.vk.com/blank.html";
-			var u = OAuthWeb.GetAuthorizationUrl("VK", callbackUrl);
 			return Redirect (OAuthWeb.GetAuthorizationUrl ("VK",  callbackUrl));
-			//return Redirect ("https://oauth.vk.com/authorize?client_id=5126467&display=page" +
-			//"&redirect_uri=http://127.0.0.1:8080/Act/VkLoginCallback&scope=email,status&response_type=code&v=5.40");
 		}
 
 		public ActionResult VkLoginCallback(){
 			var result = OAuthWeb.VerifyAuthorization ();
-//			var a = RouteData.Values ["access_token"];
-//			var args = Request.Url.Query;
-//			var rightIdx = args.IndexOf ('&') - 1;
-//			var access_token = args.Substring(14, rightIdx);
 			if (result.IsSuccessfully) {
 				TempData["token"] = result.AccessTokenValue;
 				TempData ["author"] = result.UserInfo.FullName;
@@ -89,7 +81,7 @@ namespace Mmfeedback.Controllers
 		[HttpPost]
 		public ActionResult SendMessage(string title, string description){
 			var author = TempData.ContainsKey ("author") ? (string)TempData ["author"] : "";
-			var authorId = TempData.ContainsKey ("authorId") ? "vk.com/" + (string)TempData ["authorId"] : "anonym";
+			var authorId = TempData.ContainsKey ("authorId") ? "https://vk.com/" + (string)TempData ["authorId"] : "anonym";
 			var message = new Message () { 
 				Title = title,
 				Description = description,

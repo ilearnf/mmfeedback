@@ -15,10 +15,11 @@ namespace Mmfeedback.Controllers
 	public class HomeController : Controller
 	{
 		private readonly IReviewRepository repository;
-		private static readonly int _itemsPerPage = 10;
+		private readonly int _itemsPerPage;
 
-		public HomeController (IReviewRepository newRepository){
+		public HomeController (IReviewRepository newRepository, int itemsPerPage = 10){
 			repository = newRepository;
+			_itemsPerPage = itemsPerPage;
 		}
 
 		public ActionResult Index (int page=0)
@@ -32,7 +33,7 @@ namespace Mmfeedback.Controllers
 			return View (repository.Reviews.Take(_itemsPerPage));
 		}
 
-		public ActionResult GetFitTags(string start){
+		public ContentResult GetFitTags(string start){
 			if (start == "")
 				return Content(String.Join (",", repository.Tags.AsEnumerable ()));
 			return Content(string.Join (",", repository.Tags

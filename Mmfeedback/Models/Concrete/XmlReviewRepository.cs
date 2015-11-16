@@ -47,17 +47,18 @@ namespace Mmfeedback.Models.Concrete
 		}
 
 		private int GetCommunityDiscussionsCount(int postId){
-			int count;
-			var api = new Api ();
-			api.AddToken (new Token ("22b299f8c56446504035cc2c561b95823a3a21b5afa2377b620e0e36aac1e8ac947520d0f12c673a6d8ea"));
-			try{
-				count = api.Wall.GetByIdSync(0, 
-					new string[] { "-106361362_" + postId })[0].Comments.Count;
-			}
-			catch (IndexOutOfRangeException e){
-				count = 0;
-			}
-			return count;
+			return 1;
+//			int count;
+//			var api = new Api ();
+//			api.AddToken (new Token ("22b299f8c56446504035cc2c561b95823a3a21b5afa2377b620e0e36aac1e8ac947520d0f12c673a6d8ea"));
+//			try{
+//				count = api.Wall.GetByIdSync(0, 
+//					new string[] { "-106361362_" + postId })[0].Comments.Count;
+//			}
+//			catch (IndexOutOfRangeException e){
+//				count = 0;
+//			}
+//			return count;
 		}
 
 		public void Add(Review review){
