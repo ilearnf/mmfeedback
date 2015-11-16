@@ -9,6 +9,7 @@ using Mmfeedback.Controllers;
 using Moq;
 using Mmfeedback.Models.Entities;
 using Mmfeedback.Models.Abstract;
+using System.Web;
 
 namespace Mmfeedback.Tests
 {
@@ -76,7 +77,7 @@ namespace Mmfeedback.Tests
 				},
 				new Review () { Title = "title", Description = "cs", Id = 1, PostId = 1,
 					CommunityUrl = "url", CommunutyDiscussionsCount = 0, Author = "",
-		            Category = "", Tags = new string[]{ "cs" }, Date = "1.1.1", AuthorId = 1
+		            Category = "", Tags = new string[]{ "cs" }, Date = "1.1.1", AuthorId = "1"
 				},
 				new Review () { Title = "title", Description = "cs programming", Id = 1,
 					CommunityUrl = "url", CommunutyDiscussionsCount = 0, Author = null,
@@ -123,13 +124,16 @@ namespace Mmfeedback.Tests
 					Category = "", Tags = new string[]{ "algo", "shur" }, Date = "1.1.1"
 				}
 			}.AsQueryable ());
+			var contextMock = new Mock<ControllerContext> ();
+			contextMock.Setup (x => x.HttpContext.Request["X-Requested-With"]).Returns ("");
 			var controller = new HomeController (mock.Object, 4);
+			controller.ControllerContext = contextMock.Object;
 
 			// Act
-			var result = (IEnumerable<Review>)controller.Index ();
-			Assert.IsInstanceOf (typeof(ViewResult));
+			var result = controller.Index();
+			Assert.IsInstanceOf<ViewResult> (result);
 			var viewResult = result as ViewResult;
-			var reviews = viewResult.Model;
+			var reviews = (IEnumerable<Review>)viewResult.Model;
 			// Assert
 			var reviewsArray = reviews.ToArray();
 			Assert.IsTrue(reviewsArray.Length == 4);
@@ -171,9 +175,9 @@ namespace Mmfeedback.Tests
 
 			// Assert
 			Assert.IsTrue(resultWithEmptyString.Split(',').Length == 5);
-			Assert.IsTrue (resultWithFittedString.Split (',').Length == 1);
-			Assert.IsTrue (resultWithWrongString.Split (',').Length == 0);
-			Assert.AreEqual (resultWithFittedString, "algo");
+			Assert.IsTrue (resultWithFittedString.Split (',').Length == 2);
+			Assert.AreEqual (resultWithWrongString, "");
+			Assert.AreEqual (resultWithFittedString, "algo,algebra");
 		}
 	}
 }

@@ -53,10 +53,11 @@ namespace Mmfeedback.Controllers
 			//var id = TempData.ContainsKey("id") ? (string)TempData ["id"] : "";
 			if (password != "111") {
 				Session ["logged"] = false;
-				return Redirect (Url.Action ("ThrowError"));
+				return RedirectToAction ("ThrowError");
 			}
+			Session.Add ("logged", true);
 			Session ["logged"] = true;
-			return Redirect (Url.Action ("Index"));
+			return RedirectToAction ("Index");
 		}
 
 		public ActionResult Logout(){

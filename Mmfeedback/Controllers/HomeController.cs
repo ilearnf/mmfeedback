@@ -35,7 +35,7 @@ namespace Mmfeedback.Controllers
 
 		public ContentResult GetFitTags(string start){
 			if (start == "")
-				return Content(String.Join (",", repository.Tags.AsEnumerable ()));
+				return Content(String.Join (",", repository.Tags.AsEnumerable ().Take(5)));
 			return Content(string.Join (",", repository.Tags
 				.AsEnumerable ()
 				.Where (x => x.StartsWith (start))
