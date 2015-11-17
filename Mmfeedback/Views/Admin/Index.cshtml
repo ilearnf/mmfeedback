@@ -11,48 +11,7 @@
     <script src="@Url.Content("~/Scripts/jquery-1.11.3.min.js")"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <title>Index</title>
-    <script>
-    $(document).ready(function(){
-        $(".confirm").on("click", function(){
-            var parent = $(this).parent();
-            parent.hide();
-            var description = parent.find(".description").text();
-            var title = parent.find(".title").text();
-            var tags = parent.find(".tags").text();
-            var author = parent.find(".author").text();
-            var authorId = parent.find(".author-id").text();
-            var id = parent.find(".id").text();
-            $.ajax({
-                url: '@Url.Action("PostReview", "Admin")',
-                type: "POST",
-                data: { 
-	                description: description,
-	                title: title,
-	                author: author,
-	                authorId: authorId,
-	                id: id,
-	                tags: tags
-                },
-                success: function(result){
-                    alert(result);
-                }
-            });
-        });
-        $(".decline").on("click", function(){
-            $(this).parent().hide();
-            $.ajax({
-                url: '@Url.Action("DeclineReview", "Admin")',
-                type: "POST",
-                data: { 
-                    id: $(this).parent().find(".id").text(),
-                },
-                success: function(result){
-                    alert(result);
-                }
-            });
-        });
-    });
-    </script>
+    <script src="@Url.Content("~/Scripts/AdminIndex.js")"></script>
     <style>
         .id{
             display: none;

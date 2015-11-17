@@ -122,6 +122,7 @@
     <Folder Include="Models\VIewModels\" />
     <Folder Include="Models\VIewModels\Forms\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -174,6 +175,10 @@
     <Content Include="App_LocalResources\cat.gif" />
     <Content Include="Views\Admin\ThrowError.cshtml" />
     <Content Include="App_LocalResources\cat2.gif" />
+    <Content Include="Scripts\AddReview.js" />
+    <Content Include="Scripts\AdminIndex.js" />
+    <Content Include="Styles\AddReviewStyle.css" />
+    <Content Include="Styles\HomeStyle.css" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
