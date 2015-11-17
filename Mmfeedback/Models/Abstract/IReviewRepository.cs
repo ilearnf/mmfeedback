@@ -13,6 +13,7 @@ namespace Mmfeedback.Models.Abstract
 		void Add (Review review);
 		Review Get(int id);
 		int GetNextId();
+		int UpdateCommunityDiscussionsCount (int id);
 	}
 }
 

@@ -31,7 +31,7 @@ namespace Mmfeedback.Models.Concrete
 					Description = review.Element ("description").Value,
 					Date = review.Element ("date").Value,
 					CommunityUrl = review.Element ("communityurl").Value,
-					CommunutyDiscussionsCount = GetCommunityDiscussionsCount(Int32.Parse(review.Element ("postid").Value)),
+					CommunutyDiscussionsCount = (Int32.Parse(review.Element ("communutydiscussionscount").Value)),
 					Author = review.Element ("author").Value,
 					AuthorId = review.Element ("authorid").Value,
 					Tags = review.Element ("tags").Value.Split(',')
@@ -46,19 +46,27 @@ namespace Mmfeedback.Models.Concrete
 				.AsQueryable ();
 		}
 
-		private int GetCommunityDiscussionsCount(int postId){
-			return 1;
-//			int count;
-//			var api = new Api ();
-//			api.AddToken (new Token ("22b299f8c56446504035cc2c561b95823a3a21b5afa2377b620e0e36aac1e8ac947520d0f12c673a6d8ea"));
-//			try{
-//				count = api.Wall.GetByIdSync(0, 
-//					new string[] { "-106361362_" + postId })[0].Comments.Count;
-//			}
-//			catch (IndexOutOfRangeException e){
-//				count = 0;
-//			}
-//			return count;
+		public int UpdateCommunityDiscussionsCount(int id){
+			int count;
+			var element = _database
+				.Descendants ("review")
+				.Where (review => Int32.Parse (review.Element ("id").Value) == id)
+				.Select (review => review)
+				.FirstOrDefault ();
+			var postId = Int32.Parse (element.Element ("postid").Value);
+			var oldCount = Int32.Parse (element.Element ("communitydiscussionscount").Value);
+			var api = new Api ();
+			api.AddToken (new Token ("22b299f8c56446504035cc2c561b95823a3a21b5afa2377b620e0e36aac1e8ac947520d0f12c673a6d8ea"));
+			try{
+				count = api.Wall.GetByIdSync(0, 
+					new string[] { "-106361362_" + postId })[0].Comments.Count;
+			}
+			catch (IndexOutOfRangeException e){
+				count = 0;
+			}
+			element.Element ("communutydiscussionscount").Value = count.ToString ();
+			_database.Save (_dbPath);
+			return count;
 		}
 
 		public void Add(Review review){

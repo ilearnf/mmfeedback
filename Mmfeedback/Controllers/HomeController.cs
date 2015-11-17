@@ -33,6 +33,11 @@ namespace Mmfeedback.Controllers
 			return View (repository.Reviews.Take(_itemsPerPage));
 		}
 
+		public ContentResult UpdateCommunityDiscussionsCount(int id){
+			var count = repository.UpdateCommunityDiscussionsCount (id);
+			return Content (count.ToString ());
+		}
+
 		public ContentResult GetFitTags(string start){
 			if (start == "")
 				return Content(String.Join (",", repository.Tags.AsEnumerable ().Take(5)));

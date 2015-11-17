@@ -15,6 +15,15 @@ var loading = false;
 	            if (savedTags.length == 0 && $("#search").val() == "")
 	                Search("", 0);
 	        });
+
+	        $("a.community-link").click(function(){
+	            var id = parseInt($(this).attr("item"));
+	            var hrefElement = $(this);
+	            $.get("/Home/UpdateCommunityDiscussionsCount?id=" + id, function(data){
+	            if (data != "")
+	                hrefElement.text(data);
+	            });
+	        });
 	    });
 	    
 	    function DeleteTag(object){
@@ -118,6 +127,7 @@ var loading = false;
 				});
 			}
 		}
+
 
 		$(window).scroll(function(){
 			if ($(window).scrollTop() == $(document).height() - $(window).height())

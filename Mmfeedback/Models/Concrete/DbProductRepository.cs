@@ -21,6 +21,9 @@ namespace Mmfeedback
 		public virtual int GetNextId(){
 			return 1;
 		}
+		public int UpdateCommunityDiscussionsCount(int id){
+			return 1;
+		}
 	}
 }
 

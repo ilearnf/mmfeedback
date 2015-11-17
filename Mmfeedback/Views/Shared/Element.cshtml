@@ -6,7 +6,7 @@
             <p>@Model.Date</p>
         </div>
         <div class="discussion-counter">
-            <a href="@Model.CommunityUrl" class="community-link"><i class="material-icons w3-xxlarge">person</i>@Model.CommunutyDiscussionsCount</a>
+            <a href="@Model.CommunityUrl" item="@Model.Id" class="community-link"><i class="material-icons w3-xxlarge">person</i>@Model.CommunutyDiscussionsCount</a>
         </div>
         <div class="meta-tags">
             <p>@String.Join(", ", Model.Tags)</p>
