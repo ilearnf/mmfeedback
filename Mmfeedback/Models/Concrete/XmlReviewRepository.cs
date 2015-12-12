@@ -54,15 +54,16 @@ namespace Mmfeedback.Models.Concrete
 				.Select (review => review)
 				.FirstOrDefault ();
 			var postId = Int32.Parse (element.Element ("postid").Value);
-			var oldCount = Int32.Parse (element.Element ("communitydiscussionscount").Value);
+			var oldCount = Int32.Parse (element.Element ("communutydiscussionscount").Value);
 			var api = new Api ();
-			api.AddToken (new Token ("22b299f8c56446504035cc2c561b95823a3a21b5afa2377b620e0e36aac1e8ac947520d0f12c673a6d8ea"));
+			//api.AddToken (new Token ("22b299f8c56446504035cc2c561b95823a3a21b5afa2377b620e0e36aac1e8ac947520d0f12c673a6d8ea"));
+			api.AddToken(new Token("cf54ae77fdfba85e3e141c865552d916191a636d0dd682b6472f3ba2a1b9883cecae7e2f7dab7273afcd3"));
 			try{
 				count = api.Wall.GetByIdSync(0, 
 					new string[] { "-106361362_" + postId })[0].Comments.Count;
 			}
 			catch (IndexOutOfRangeException e){
-				count = 0;
+				count = oldCount;
 			}
 			element.Element ("communutydiscussionscount").Value = count.ToString ();
 			_database.Save (_dbPath);

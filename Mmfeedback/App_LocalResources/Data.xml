@@ -7,7 +7,7 @@
     <date>15.11.2015</date>
     <description>I am Obi-Wan Kenobi and I am reviewing algo course by Shur A. M.</description>
     <tags>jedi</tags>
-    <category></category>
+    <category>На курс</category>
     <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_20</communityurl>
     <communutydiscussionscount>0</communutydiscussionscount>
     <author></author>
@@ -20,10 +20,62 @@
     <date>15.11.2015</date>
     <description>I am Darth Vader and I am reviewing calculus course by Shamgunov N. K.</description>
     <tags>calculus,shamgunov</tags>
-    <category></category>
+    <category>На курс</category>
     <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_22</communityurl>
     <communutydiscussionscount>1</communutydiscussionscount>
     <author>Моисей Фомин</author>
     <authorid>330861314</authorid>
+  </review>
+  <review>
+    <id>3</id>
+    <postid>43</postid>
+    <title>Курс Скрипты</title>
+    <date>12.12.2015</date>
+    <description>Хороший курс, рекомендую!</description>
+    <tags>jscript,solodushkin</tags>
+    <category></category>
+    <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_43</communityurl>
+    <communutydiscussionscount>0</communutydiscussionscount>
+    <author></author>
+    <authorid></authorid>
+  </review>
+  <review>
+    <id>4</id>
+    <postid>44</postid>
+    <title>Сессия прошла успешно!</title>
+    <date>12.12.2015</date>
+    <description>Сессия прошла успешно!</description>
+    <tags>session</tags>
+    <category></category>
+    <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_44</communityurl>
+    <communutydiscussionscount>1</communutydiscussionscount>
+    <author>Моисей Фомин</author>
+    <authorid>330861314</authorid>
+  </review>
+  <review>
+    <id>5</id>
+    <postid>45</postid>
+    <title>Выбор спецкурса 5 семестр</title>
+    <date>12.12.2015</date>
+    <description>Долго мучился с выбором курса, хочу оставить отзыв - другим будет проще.</description>
+    <tags>course,choise</tags>
+    <category></category>
+    <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_45</communityurl>
+    <communutydiscussionscount>1</communutydiscussionscount>
+    <author>Моисей Фомин</author>
+    <authorid>330861314</authorid>
+  </review>
+  <review>
+    <id>6</id>
+    <postid>49</postid>
+    <title>Видео-курсы</title>
+    <date>12.12.2015</date>
+    <description>Видео-курсы - это удобно!</description>
+    <tags>ulearn</tags>
+    <category></category>
+    <communityurl>https://vk.com/moiseyfomin?w=wall-106361362_49</communityurl>
+    <communutydiscussionscount>3</communutydiscussionscount>
+    <author></author>
+    <authorid></authorid>
   </review>
 </reviews>

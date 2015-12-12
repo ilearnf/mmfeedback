@@ -7,12 +7,15 @@ function stringStartsWith(base, prefix){
 		$(document).ready(function(){
 		    $("#search").on("input", function(){
 		        $(".tagCheckbox").each(function(){
+		        var searchingTagExists = false;
 		            if (stringStartsWith($(this).val(), $("#search").val()))
 		                $(this).parent().parent().show();
 		            else
 		                $(this).parent().parent().hide();
+		            if ($("#search").val() == $(this).val())
+		                searchingTagExists = true;
 		        });
-	            if ($(".checkbox:visible").length == 0)
+	            if ($(".checkbox:visible").length == 0 || !searchingTagExists)
 	                $("#addTag").css("visibility", "visible");
 	            else
 	                $("#addTag").css("visibility", "hidden");

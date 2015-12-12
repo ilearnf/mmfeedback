@@ -9,7 +9,7 @@ $(document).ready(function(){
             var authorId = parent.find(".author-id").text();
             var id = parent.find(".id").text();
             $.ajax({
-                url: '@Url.Action("PostReview", "Admin")',
+                url: "/Admin/PostReview",
                 type: "POST",
                 data: { 
 	                description: description,
@@ -25,16 +25,20 @@ $(document).ready(function(){
             });
         });
         $(".decline").on("click", function(){
-            $(this).parent().hide();
+            var userId = $(this).parent().find(".author-id").text();
+            var reason = $(this).parent().find(".reason").val();
             $.ajax({
-                url: '@Url.Action("DeclineReview", "Admin")',
+                url: '/Admin/DeclineReview',
                 type: "POST",
                 data: { 
                     id: $(this).parent().find(".id").text(),
+                    userId: userId,
+                    reason: reason
                 },
                 success: function(result){
                     alert(result);
                 }
             });
+            $(this).parent().hide();
         });
     });

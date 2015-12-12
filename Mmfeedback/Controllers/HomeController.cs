@@ -24,12 +24,18 @@ namespace Mmfeedback.Controllers
 
 		public ActionResult Index (int page=0)
 		{
+			ViewBag.Categories = new List<string> () {
+				"",
+				"Официальный",
+				"На преподавателя",
+				"На курс",
+				"На направление",
+			};
 			if (Request.IsAjaxRequest())
 				return PartialView ("NewContent", 
 					repository.Reviews
 					.Skip (page * _itemsPerPage)
 					.Take (_itemsPerPage));
-			ViewBag.Tags = new SelectList (repository.Tags.AsEnumerable ());
 			return View (repository.Reviews.Take(_itemsPerPage));
 		}
 
